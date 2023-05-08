@@ -1,6 +1,6 @@
 import express from "express";
 import { PrismaClient } from "@prisma/client";
-import { keys } from "./src/lib/index.mjs";
+import { keys } from "./src/lib/keys.mjs";
 
 const prisma = new PrismaClient();
 const app = express();
