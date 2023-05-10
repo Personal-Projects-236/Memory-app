@@ -1,10 +1,10 @@
 div {
-  display: flex;
-  margin: 1% 20%;
+	display: flex;
+	margin: 1% 20%;
 }
 
 img {
-  width: 8rem;
-  height: auto;
-  padding: 10px;
+	width: 8rem;
+	height: auto;
+	padding: 10px;
 }

@@ -3,12 +3,12 @@ import logo from "../../images/Title_image.png";
 import { title } from "../atom/title";
 
 const Header = () => {
-  return (
-    <div className={styles.div}>
-      {title("Memory App")}
-      <img className={styles.img} src={logo} alt="title" />
-    </div>
-  );
+	return (
+		<div className={styles.div}>
+			{title("Memory App")}
+			<img className={styles.img} src={logo} alt="title" />
+		</div>
+	);
 };
 
 export default Header;
