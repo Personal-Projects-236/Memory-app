@@ -10,3 +10,17 @@
 .right {
 	width: 70%;
 }
+
+@media screen and (max-width: 800px) {
+	.div {
+		display: block;
+	}
+
+	.left {
+		width: 100%;
+	}
+
+	.right {
+		width: 100%;
+	}
+}
