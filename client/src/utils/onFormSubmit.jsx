@@ -1,4 +1,6 @@
-import { getBase64 } from "././getBase64.jsx";
+import axios from "axios";
+
+import { getBase64 } from "./getBase64.jsx";
 
 export const onFormSubmit = (data) => {
 	const { title, description, tags, image } = data;
@@ -13,7 +15,12 @@ export const onFormSubmit = (data) => {
 		})
 		.then(() => {
 			let sending = { title, description, tags, image: base64 };
-			console.log("sending", sending);
+			axios
+				.post("/forms", sending)
+				.then((items) => {
+					let { status, data } = items;
+				})
+				.catch((err) => console.log("err", err));
 		})
 		.catch((err) => {
 			console.log("err", err);
