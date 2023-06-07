@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 
 import { alert } from "../components/atom";
 import Header from "../components/organism/Header.jsx";
@@ -12,13 +12,16 @@ const Home = () => {
 	const { state, dispatch } = useAppContext();
 	const { formReducer } = state;
 
-	const callTimer = () => dispatch({ type: "RESET_FLAG" });
+	const callTimer = useCallback(
+		() => dispatch({ type: "RESET_FLAG" }),
+		[dispatch]
+	);
 
 	useEffect(() => {
 		if (formReducer.flag === true) {
 			setTimeout(callTimer, 10000);
 		}
-	}, [formReducer.flag]);
+	}, [formReducer.flag, callTimer]);
 
 	return (
 		<div className={styles.div}>

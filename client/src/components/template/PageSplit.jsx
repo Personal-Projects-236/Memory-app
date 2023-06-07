@@ -1,3 +1,4 @@
+import Cards from "../organism/Cards.jsx";
 import Forms from "../organism/Forms.jsx";
 
 import styles from "../../styles/components/template/PageSplit.module.css";
@@ -9,7 +10,7 @@ const PageSplit = () => {
 				<Forms />
 			</div>
 			<div className={styles.right}>
-				<h1>right</h1>
+				<Cards />
 			</div>
 		</div>
 	);
