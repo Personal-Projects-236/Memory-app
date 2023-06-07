@@ -14,6 +14,7 @@ const Forms = () => {
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors },
 	} = useForm();
 
@@ -23,6 +24,7 @@ const Forms = () => {
 		const { data, status } = await onFormSubmit(formData);
 		const { msg } = data;
 
+		reset();
 		dispatch({ type: "JSON_RESPONSE", msg, status });
 	};
 
