@@ -1,3 +1,3 @@
 export const initialState = {
-	formReducer: {},
+	formReducer: { flag: false },
 };
