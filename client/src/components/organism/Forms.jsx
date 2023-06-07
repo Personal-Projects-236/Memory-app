@@ -9,7 +9,7 @@ import useAppContext from "../../hooks/useAppContext.jsx";
 import styles from "../../styles/components/organism/Forms.module.css";
 
 const Forms = () => {
-	const { state, dispatch } = useAppContext();
+	const { dispatch } = useAppContext();
 
 	const {
 		register,
@@ -25,8 +25,6 @@ const Forms = () => {
 
 		dispatch({ type: "JSON_RESPONSE", msg, status });
 	};
-
-	console.log("state", state);
 
 	return (
 		<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
