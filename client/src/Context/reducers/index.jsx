@@ -1,1 +1,1 @@
-export * from "././formReducers.jsx";
+export * from "./formReducer.jsx";

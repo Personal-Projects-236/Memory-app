@@ -1,4 +1,4 @@
 import { combineReducers } from "./combineReducers.jsx";
-import { formReducers } from "../reducers/index.jsx";
+import { formReducer } from "../reducers/index.jsx";
 
-export const rootReducers = combineReducers({ formReducers });
+export const rootReducers = combineReducers({ formReducer });
