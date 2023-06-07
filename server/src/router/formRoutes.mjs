@@ -10,9 +10,13 @@ router.post("/", async (req, res) => {
 	await prisma.user
 		.create({ data: body })
 		.then(() => {
-			res.status(200).json({ msg: "Success" });
+			res
+				.status(200)
+				.json({ msg: "Your data was successfully saved to Database" });
 		})
-		.catch((err) => console.log("err", err));
+		.catch((err) => {
+			res.status(500).json({ msg: err.message });
+		});
 });
 
 export default router;

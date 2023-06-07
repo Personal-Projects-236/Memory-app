@@ -3,7 +3,9 @@ export const formReducer = (state, action) => {
 
 	switch (type) {
 		case "JSON_RESPONSE":
-			return { ...state, msg, status };
+			return { ...state, flag: true, msg, status };
+		case "RESET_FLAG":
+			return { flag: false };
 		default:
 			return state;
 	}

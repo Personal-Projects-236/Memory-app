@@ -9,11 +9,12 @@ import useAppContext from "../../hooks/useAppContext.jsx";
 import styles from "../../styles/components/organism/Forms.module.css";
 
 const Forms = () => {
-	const { state, dispatch } = useAppContext();
+	const { dispatch } = useAppContext();
 
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors },
 	} = useForm();
 
@@ -23,10 +24,9 @@ const Forms = () => {
 		const { data, status } = await onFormSubmit(formData);
 		const { msg } = data;
 
+		reset();
 		dispatch({ type: "JSON_RESPONSE", msg, status });
 	};
-
-	console.log("state", state);
 
 	return (
 		<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>

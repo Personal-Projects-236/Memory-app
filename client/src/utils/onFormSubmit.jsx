@@ -18,9 +18,6 @@ export const onFormSubmit = async (formData) => {
 			return await axios
 				.post("/forms", sending)
 				.then((items) => {
-					console.log("items", items.data.msg);
-					let { msg } = items.data;
-					console.log("msg", msg);
 					return items;
 				})
 				.catch((err) => console.log("err", err));
