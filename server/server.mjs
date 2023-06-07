@@ -1,11 +1,11 @@
 import cors from "cors";
 import express from "express";
-import { PrismaClient } from "@prisma/client";
-import { keys } from "./src/lib/keys.mjs";
+
 import formRoutes from "./src/router/formRoutes.mjs";
 import homeRoutes from "./src/router/homeRoutes.mjs";
 
-const prisma = new PrismaClient();
+import { keys } from "./src/lib/keys.mjs";
+
 const app = express();
 
 const { PORT } = keys;
