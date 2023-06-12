@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect } from "react";
 
+import Card_Molecule from "../molecule/Card.jsx";
+
 import useAppContext from "../../hooks/useAppContext.jsx";
 
 const Cards = () => {
@@ -18,7 +20,7 @@ const Cards = () => {
 
 	return (
 		<div>
-			<h1>Cards</h1>
+			<Card_Molecule />
 		</div>
 	);
 };
