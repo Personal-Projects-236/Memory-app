@@ -1,19 +1,12 @@
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { len, data } from "../services/Card/index.mjs";
 
 const cardControllers = async (req, res) => {
 	const { query } = req;
-	const { skip } = query;
+	const { checkLength, skip } = query;
 
-	await prisma.user
-		.findMany({ skip: skip === undefined ? 0 : parseInt(skip), take: 10 })
-		.then((results) => {
-			res.status(200).json({
-				data: results,
-				msg: "Data received successfully",
-			});
-		});
+	checkLength === "true"
+		? res.status(200).json({ len: await len(), data: await data(skip) })
+		: res.status(200).json({ data: await data(skip) });
 };
 
 export default cardControllers;

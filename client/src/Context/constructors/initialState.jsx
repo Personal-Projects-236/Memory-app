@@ -1,4 +1,4 @@
 export const initialState = {
 	formReducer: { flag: false },
-	dataReducer: {},
+	dataReducer: { data: [], flag: false },
 };

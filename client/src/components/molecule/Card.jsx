@@ -6,7 +6,7 @@ import useAppContext from "../../hooks/useAppContext";
 
 import styles from "../../styles/components/molecule/Card.module.css";
 
-const Card_Molecule = () => {
+const CardMolecule = () => {
 	const { state } = useAppContext();
 	const { dataReducer } = state;
 	const { data } = dataReducer;
@@ -39,4 +39,4 @@ const Card_Molecule = () => {
 	);
 };
 
-export default Card_Molecule;
+export default CardMolecule;
