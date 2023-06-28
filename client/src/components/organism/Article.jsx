@@ -3,6 +3,12 @@ import useInfiniteScroll from "../../hooks/useInfiniteScroll";
 const Article = () => {
 	const data = useInfiniteScroll("/card");
 
+	if (data.length == 0) {
+		return <h1>Loading...</h1>;
+	}
+
+	console.log("data", data);
+
 	return (
 		<>
 			<ul className="list-group-ul">
