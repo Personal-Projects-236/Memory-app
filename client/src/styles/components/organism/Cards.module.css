@@ -13,12 +13,12 @@
 	width: 18rem;
 	border: 1px solid black;
 	border-radius: 10px;
+	padding: 10px 1.2rem;
 }
 
 .title {
 	text-transform: uppercase;
-	text-align: center;
-	padding: 3px;
+	margin: auto;
 }
 
 .image {
