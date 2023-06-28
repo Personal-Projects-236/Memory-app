@@ -10,6 +10,8 @@ export const dataReducer = (state, action) => {
 			return { ...state, flag };
 		case "UPDATE_SKIP":
 			return { ...state, skip };
+		case "SLICE_DATA":
+			return { ...state, data };
 		default:
 			return { ...state };
 	}
