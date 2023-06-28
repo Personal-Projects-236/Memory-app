@@ -9,7 +9,7 @@ import useAppContext from "../../hooks/useAppContext.jsx";
 import styles from "../../styles/components/organism/Forms.module.css";
 
 const Forms = () => {
-	const { dispatch } = useAppContext();
+	const { state, dispatch } = useAppContext();
 
 	const {
 		register,
@@ -23,10 +23,14 @@ const Forms = () => {
 	const onSubmit = async (formData) => {
 		const { data, status } = await onFormSubmit(formData);
 		const { msg } = data;
+		const slice = state.dataReducer.data.slice(0, 10);
 
 		reset();
 		dispatch({ type: "JSON_RESPONSE", msg, status });
+		dispatch({ type: "SLICE_DATA", data: slice });
 	};
+
+	console.log("data", state.dataReducer.data);
 
 	return (
 		<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
