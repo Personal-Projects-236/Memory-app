@@ -30,8 +30,6 @@ const Forms = () => {
 		dispatch({ type: "SLICE_DATA", data: status === 200 ? slice : data });
 	};
 
-	console.log("data", state.dataReducer.data);
-
 	return (
 		<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 			{inputWithErrors(array, register, errors)}
