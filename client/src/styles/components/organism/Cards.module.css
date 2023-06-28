@@ -1,0 +1,36 @@
+.container {
+	display: flex;
+	margin: 10px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: row-gap;
+	row-gap: 10px;
+	column-gap: 10px;
+	justify-content: space-evenly;
+}
+
+.card {
+	width: 18rem;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px 1.2rem;
+}
+
+.title {
+	text-transform: uppercase;
+	margin: auto;
+}
+
+.image {
+	padding: 5%;
+}
+
+.description {
+	text-align: center;
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-evenly;
+	padding: 3%;
+}
