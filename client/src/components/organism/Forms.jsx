@@ -27,7 +27,7 @@ const Forms = () => {
 
 		reset();
 		dispatch({ type: "JSON_RESPONSE", msg, status });
-		dispatch({ type: "SLICE_DATA", data: slice });
+		dispatch({ type: "SLICE_DATA", data: status === 200 ? slice : data });
 	};
 
 	console.log("data", state.dataReducer.data);
