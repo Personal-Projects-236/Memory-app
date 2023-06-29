@@ -9,7 +9,7 @@ import { onFormSubmit, loadData } from "../../utils";
 import styles from "../../styles/components/organism/Forms.module.css";
 
 const Forms = () => {
-	const { state, dispatch } = useAppContext();
+	const { dispatch } = useAppContext();
 
 	const {
 		register,
@@ -23,8 +23,6 @@ const Forms = () => {
 	const onSubmit = async (formData) => {
 		const { data, status } = await onFormSubmit(formData);
 		const { msg } = data;
-
-		console.log("data", state.dataReducer.data);
 
 		reset();
 		dispatch({ type: "JSON_RESPONSE", msg, status });
