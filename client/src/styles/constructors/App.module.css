@@ -1,4 +1,5 @@
 .div {
+	height: 100vh;
 	--s: 150px; /* control the size */
 
 	--_g: #0000 90deg, #046d8b 0;

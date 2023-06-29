@@ -9,6 +9,9 @@ import styles from "../../styles/components/organism/Cards.module.css";
 const Cards = () => {
 	const data = useInfiniteScroll("/card");
 
+	// FIX: spinner keeps spinning when there is no data in db
+	// FIX: if I post something to db from form it gives me a data error
+
 	return (
 		<>
 			{data.length === 0 ? (
