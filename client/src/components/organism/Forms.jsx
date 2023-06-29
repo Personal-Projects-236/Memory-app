@@ -3,13 +3,13 @@ import { useForm } from "react-hook-form";
 import { input, btn } from "../atom/index.jsx";
 import { inputWithErrors } from "../molecule/index.jsx";
 
-import { onFormSubmit } from "../../utils/onFormSubmit.jsx";
 import useAppContext from "../../hooks/useAppContext.jsx";
+import { onFormSubmit, loadData } from "../../utils";
 
 import styles from "../../styles/components/organism/Forms.module.css";
 
 const Forms = () => {
-	const { state, dispatch } = useAppContext();
+	const { dispatch } = useAppContext();
 
 	const {
 		register,
@@ -23,11 +23,11 @@ const Forms = () => {
 	const onSubmit = async (formData) => {
 		const { data, status } = await onFormSubmit(formData);
 		const { msg } = data;
-		const slice = state.dataReducer.data.slice(0, 10);
 
 		reset();
 		dispatch({ type: "JSON_RESPONSE", msg, status });
-		dispatch({ type: "SLICE_DATA", data: status === 200 ? slice : data });
+
+		status === 200 && loadData("/card", dispatch);
 	};
 
 	return (
