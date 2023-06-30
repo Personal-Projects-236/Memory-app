@@ -1,4 +1,3 @@
-import axios from "axios";
 import { Card } from "react-bootstrap";
 
 import { btn, spinner } from "../atom";
@@ -6,25 +5,13 @@ import { btn, spinner } from "../atom";
 import useAppContext from "../../hooks/useAppContext";
 import useInfiniteScroll from "../../hooks/useInfiniteScroll.jsx";
 
-import { loadData } from "../../utils";
+import { confirmation } from "../../utils";
 
 import styles from "../../styles/components/organism/Cards.module.css";
 
 const Cards = () => {
 	const data = useInfiniteScroll("/card");
 	const { dispatch } = useAppContext();
-
-	const confirmation = (endpoint, dispatch) => {
-		if (window.confirm("Are you sure that you want to delete?")) {
-			axios.delete(endpoint).then((res) => {
-				const { data } = res;
-				dispatch({ type: "JSON_RESPONSE", msg: data.msg, status: res.status });
-				res.status === 200 && loadData("/card", dispatch);
-			});
-		} else {
-			return;
-		}
-	};
 
 	return (
 		<>
