@@ -1,4 +1,4 @@
-import { len, data } from "../services/Card/index.mjs";
+import { len, data } from "../../services/Card/index.mjs";
 
 const cardControllers = async (req, res) => {
 	const { query } = req;
