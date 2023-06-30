@@ -1,31 +1,16 @@
 import express from "express";
-import cardControllers from "../controllers/cardControllers.mjs";
 
-import { PrismaClient } from "@prisma/client";
+import getCard from "../controllers/cardControllers/getCard.mjs";
+import deleteCard from "../controllers/cardControllers/deleteCard.mjs";
 
 const router = express.Router();
-const prisma = new PrismaClient();
 
 router
 	.get("/", async (req, res) => {
-		await cardControllers(req, res);
+		await getCard(req, res);
 	})
 	.delete("/", async (req, res) => {
-		const { query } = req;
-		const { id } = query;
-
-		await prisma.user
-			.delete({
-				where: {
-					id: parseInt(id),
-				},
-			})
-			.then(() => {
-				res
-					.status(200)
-					.json({ msg: "Your Card has been successfully deleted" });
-			})
-			.catch((err) => console.log("err", err));
+		await deleteCard(req, res);
 	});
 
 export default router;
