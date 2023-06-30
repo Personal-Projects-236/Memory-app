@@ -2,12 +2,16 @@ import { Card } from "react-bootstrap";
 
 import { btn, spinner } from "../atom";
 
+import useAppContext from "../../hooks/useAppContext";
 import useInfiniteScroll from "../../hooks/useInfiniteScroll.jsx";
+
+import { confirmation } from "../../utils";
 
 import styles from "../../styles/components/organism/Cards.module.css";
 
 const Cards = () => {
 	const data = useInfiniteScroll("/card");
+	const { dispatch } = useAppContext();
 
 	return (
 		<>
@@ -24,7 +28,9 @@ const Cards = () => {
 									{description}
 								</Card.Text>
 								<div className={styles.description}>
-									{btn("danger", "Delete")}
+									{btn("danger", "Delete", () =>
+										confirmation(`/card?id=${id}`, dispatch)
+									)}
 									{btn("primary", "Update")}
 								</div>
 							</Card>
