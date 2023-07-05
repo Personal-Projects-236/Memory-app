@@ -3,3 +3,4 @@ export * from "./loadData.jsx";
 export * from "./moreData.jsx";
 export * from "./scrollEvent.jsx";
 export * from "./confirmation.jsx";
+export * from "./updateForm.jsx";
